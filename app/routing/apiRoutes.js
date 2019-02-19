@@ -26,13 +26,6 @@ module.exports = function(app) {
     res.json(friendData);
   });
 
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
 
 //**
 // Determine the user's most compatible friend using the following as a guide:
@@ -53,16 +46,13 @@ app.post('/api/friends', function(req, res){
     var match;
     for(var i in friendData){
         var totalDifference = Math.abs(req.body.scores.reduce(getSum) - friendData[i].scores.reduce(getSum));
-        // save the lowest total difference / match before moving on to the next friend
         if(totalDifference < lowestTotalDifference){
             lowestTotalDifference = totalDifference;
             match = friendData[i]
         }
     }
-    // add the current user object to the friends array
     friendData.push(req.body);
     res.send(match);
-    // res.send([match, lowestTotalDifference])
 })
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
