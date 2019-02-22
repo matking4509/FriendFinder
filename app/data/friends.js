@@ -2,19 +2,19 @@
 var friendArray =
 [
     {
-    "name":"Ahmed",
-    "photo":"https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg",
+    "name":"Pat",
+    "photo":"https://upload.wikimedia.org/wikipedia/en/9/99/Itispat.jpg",
     "scores":[
-        5,
-        1,
-        4,
-        4,
-        5,
-        1,
+        3,
         2,
-        5,
-        4,
-        1
+        3,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3,
+        2
         ]
     }
 ]
